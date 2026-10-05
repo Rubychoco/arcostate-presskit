@@ -44,7 +44,12 @@ a:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
 .btn.primary:hover { background: var(--glow); }
 .win { border: 1px solid var(--line); outline: 1px solid var(--line-dim); outline-offset: -5px; background: var(--panel); padding: 28px clamp(18px, 4vw, 36px); min-width: 0; }
 h2 { font: 400 1.05rem/1.2 var(--font-display); color: var(--glow); letter-spacing: 0.04em; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
-h2::after { content: ""; flex: 1; height: 1px; background: var(--line-dim); }
+h2::after { content: ""; flex: 1; height: 10px; min-width: 26px; image-rendering: pixelated;
+  background:
+    url("img/ui/div_cap_l.png") left center / 8px 10px no-repeat,
+    url("img/ui/div_cap_r.png") right center / 8px 10px no-repeat,
+    url("img/ui/div_orn.png") center center / 10px 10px no-repeat,
+    url("img/ui/div_tile.png") left center / 8px 10px repeat-x; }
 h3 { font: 500 0.8rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--line); margin: 22px 0 8px; }
 p { margin: 0 0 14px; max-width: 68ch; }
 .cols { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 28px; align-items: start; }
