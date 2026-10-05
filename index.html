@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcostate Press Kit</title>
+<meta name="description" content="Press kit for Arcostate, a turn-based sci-fi roguelike. Free demo out now on Steam and itch.io.">
+<meta property="og:title" content="Arcostate Press Kit">
+<meta property="og:description" content="Turn-based sci-fi roguelike. Free demo out now on Steam and itch.io.">
+<meta property="og:image" content="https://rubychoco.github.io/arcostate-presskit/img/capsule.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single terminal column framed like the game's own UI windows: double blue rule, black fill, labels in mono. */
+:root {
+  --void: #000000;
+  --panel: #04090e;
+  --line: #45b1ff;
+  --line-dim: #296694;
+  --glow: #9edbff;
+  --text: #d6e6f2;
+  --muted: #8aa4b8;
+  --font-display: "Silkscreen", "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--void); color: var(--text); font: 16px/1.6 var(--font-body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 40px; }
+a { color: var(--glow); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+.hero { display: grid; gap: 22px; justify-items: center; text-align: center; padding-block: 12px 4px; }
+.hero img { width: min(640px, 100%); height: auto; }
+.tagline { max-width: 60ch; color: var(--text); font-size: 1.125rem; text-wrap: balance; margin: 0; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.btn { font: 500 0.875rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+  color: var(--glow); border: 1px solid var(--line); padding: 12px 18px; background: var(--panel); }
+.btn:hover { background: #0b1d2b; }
+.btn.primary { background: var(--line); color: var(--void); }
+.btn.primary:hover { background: var(--glow); }
+.win { border: 1px solid var(--line); outline: 1px solid var(--line-dim); outline-offset: -5px; background: var(--panel); padding: 28px clamp(18px, 4vw, 36px); min-width: 0; }
+h2 { font: 400 1.05rem/1.2 var(--font-display); color: var(--glow); letter-spacing: 0.04em; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line-dim); }
+h3 { font: 500 0.8rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--line); margin: 22px 0 8px; }
+p { margin: 0 0 14px; max-width: 68ch; }
+.cols { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+dl.facts { margin: 0; display: grid; gap: 12px; }
+dl.facts div { display: grid; gap: 2px; padding-bottom: 12px; border-bottom: 1px dashed var(--line-dim); }
+dl.facts div:last-child { border-bottom: 0; padding-bottom: 0; }
+dt { font: 500 0.72rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+dd { margin: 0; font-size: 0.95rem; overflow-wrap: anywhere; }
+ul.feat { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
+ul.feat li { padding-left: 22px; position: relative; max-width: 68ch; }
+ul.feat li::before { content: "›"; position: absolute; left: 4px; color: var(--line); font-family: var(--font-mono); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 460px) { .grid { grid-template-columns: 1fr; } }
+.shot { position: relative; display: block; border: 1px solid var(--line-dim); line-height: 0; }
+.shot:hover { border-color: var(--line); }
+.shot img { width: 100%; height: auto; display: block; }
+.shot span { position: absolute; right: 6px; bottom: 6px; font: 500 0.68rem/1 var(--font-mono); background: rgba(0,0,0,0.75); color: var(--glow); padding: 4px 6px; letter-spacing: 0.05em; }
+.trailer { display: grid; max-width: 640px; }
+@media (max-width: 760px) { .trailer { grid-template-columns: 1fr; } }
+.trailer a.thumb { position: relative; display: block; border: 1px solid var(--line-dim); line-height: 0; }
+.trailer a.thumb img { width: 100%; height: auto; }
+.trailer a.thumb::after { content: "▶ WATCH ON STEAM"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 400 0.9rem/1 var(--font-display); color: var(--void); background: var(--line); padding: 10px 14px; white-space: nowrap; }
+.assets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 760px) { .assets { grid-template-columns: 1fr; } }
+.asset { border: 1px solid var(--line-dim); padding: 16px; display: grid; gap: 10px; align-content: start; }
+.asset .art { background: #000; display: grid; place-items: center; padding: 14px; min-height: 120px; }
+.asset .art img { max-height: 160px; width: auto; }
+.assetrow { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; }
+.asset.link { text-decoration: none; color: inherit; }
+.asset.link:hover { border-color: var(--line); }
+.btn.dl { cursor: pointer; }
+.note { font: 0.85rem/1.5 var(--font-mono); color: var(--muted); margin: 0; }
+.contact { display: grid; gap: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
+.row code { font: 0.95rem var(--font-mono); color: var(--text); overflow-wrap: anywhere; }
+.copy { font: 500 0.72rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--glow); background: transparent; border: 1px solid var(--line-dim); padding: 6px 9px; cursor: pointer; }
+.copy:hover { border-color: var(--line); }
+footer { text-align: center; font: 0.8rem var(--font-mono); color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .btn, .shot, .copy { transition: background-color .15s, border-color .15s; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <img src="img/logo_web.png" alt="Arcostate" width="1200" height="385">
+    <p class="tagline">A turn-based sci-fi roguelike set in a post-post-cataclysmic earth still bearing the scars that led to its ruin.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://store.steampowered.com/app/5034430/Arcostate/" target="_blank" rel="noopener">Free demo on Steam</a>
+      <a class="btn" href="https://rubychoco.itch.io/arcostate" target="_blank" rel="noopener">itch.io</a>
+      <a class="btn" href="https://discord.gg/eHM2pDJcMu" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </header>
+
+  <section class="win cols" aria-labelledby="facts">
+    <div>
+      <h2 id="facts">Fact sheet</h2>
+      <dl class="facts">
+        <div><dt>Developer</dt><dd>Rubychoco (solo developer)</dd></div>
+        <div><dt>Press contact</dt><dd>arcostategame@gmail.com</dd></div>
+        <div><dt>Genre</dt><dd>Traditional roguelike, turn-based, sci-fi</dd></div>
+        <div><dt>Platforms</dt><dd>Windows, macOS, Linux and SteamOS</dd></div>
+        <div><dt>Demo</dt><dd>Out on Steam and itch.io</dd></div>
+        <div><dt>Steam Next Fest</dt><dd>October 2026</dd></div>
+        <div><dt>Full release</dt><dd>To be announced</dd></div>
+        <div><dt>Current build</dt><dd>Alpha 0.5.6</dd></div>
+        <div><dt>Language</dt><dd>English</dd></div>
+        <div><dt>Engine</dt><dd>Godot</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2>About the game</h2>
+      <p>Arcostate is a sci-fi roguelike set in a post-post-cataclysmic earth still bearing the scars that led to its ruin. Heavily inspired by the likes of Caves of Qud, Brogue, Elin, and others, this game aims to bring a little bit of everything together. Explore a ruined planet holding technological marvels that once promised a bright future for humanity.</p>
+      <p>You arrive in a foreign land, your memories gone and only your skills to aid you. The earth is scarred and hostile, evidence of a great cataclysm found in the many scattered ruins. Across to the south, a bright blue dome dominates the horizon. Aathman, the last surviving arcology on the planet, seemingly stands as a shining beacon that defends against the many dangers in the wastes.</p>
+      <h3>The demo</h3>
+      <p>The demo covers the starting region and runs up to level 15.</p>
+      <h3>Art and music</h3>
+      <p>No AI was used in any artwork or music present in the game.</p>
+    </div>
+  </section>
+
+  <section class="win" aria-labelledby="features">
+    <h2 id="features">Features</h2>
+    <ul class="feat">
+      <li>Turn-based sci-fi roguelike with deep simulation and emergent systems.</li>
+      <li>Classic mode for true permadeath, or roleplaying mode to save and load freely.</li>
+      <li>An overworld map with hand-authored and procedural locations, and caves that descend forever.</li>
+      <li>NPCs with full daily schedules, and a faction system with grudges and witness reactions.</li>
+      <li>Cybernetics gated by a compute-power budget. NPCs use them too, and augments can be cut out of corpses.</li>
+      <li>Psychic powers upgraded through the skill tree.</li>
+      <li>Drug crafting with a toxicity system, overdoses and withdrawals.</li>
+      <li>Companions, stealth driven by each NPC's perception, and momentum physics.</li>
+      <li>Claim land, build a home, or dig down and expand underground.</li>
+      <li>Over 400 items, including 48 weapons, 107 armor pieces and 46 cybernetics.</li>
+      <li>Points-based character creation with six attributes and multi-rank skills.</li>
+    </ul>
+  </section>
+
+  <section class="win" aria-labelledby="trailer">
+    <h2 id="trailer">Trailer</h2>
+    <div class="trailer">
+      <a class="thumb" href="https://store.steampowered.com/app/5034430/Arcostate/" target="_blank" rel="noopener"><img src="img/trailer_thumb.jpg" alt="Arcostate trailer thumbnail" width="600" height="337"></a>
+    </div>
+  </section>
+
+  <section class="win" aria-labelledby="shots">
+    <h2 id="shots">Screenshots</h2>
+    <p class="note">Click a screenshot to open the full 1920×1080 image.</p>
+    <div class="grid" style="margin-top:14px">
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/81c5724384009f27bf3292cfdc534532ac69944b/ss_81c5724384009f27bf3292cfdc534532ac69944b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s1.jpg" alt="Arcostate gameplay screenshot 1" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/f8dd8eea9274585b187ac8335772f6aa4a50fd07/ss_f8dd8eea9274585b187ac8335772f6aa4a50fd07.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s2.jpg" alt="Arcostate gameplay screenshot 2" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3/ss_3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s3.jpg" alt="Arcostate gameplay screenshot 3" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e8cb696915d5fdd1eb3303b019c42de1bb1be94b/ss_e8cb696915d5fdd1eb3303b019c42de1bb1be94b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s4.jpg" alt="Arcostate gameplay screenshot 4" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/7f9079f12bce04f30007ff291da7c067093335f3/ss_7f9079f12bce04f30007ff291da7c067093335f3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s5.jpg" alt="Arcostate gameplay screenshot 5" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/65701e26b870558afd3fffb755afcc26d7f68b09/ss_65701e26b870558afd3fffb755afcc26d7f68b09.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s6.jpg" alt="Arcostate gameplay screenshot 6" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/c4ec856197a6c282069420c84dff0b03b7c9a2b8/ss_c4ec856197a6c282069420c84dff0b03b7c9a2b8.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s7.jpg" alt="Arcostate gameplay screenshot 7" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9/ss_e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s8.jpg" alt="Arcostate gameplay screenshot 8" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/d4653c9bbb31776174eeb7ae2e1e688e3a437977/ss_d4653c9bbb31776174eeb7ae2e1e688e3a437977.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s9.jpg" alt="Arcostate gameplay screenshot 9" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+    </div>
+  </section>
+
+  <section class="win" aria-labelledby="logos">
+    <h2 id="logos">Logo and art</h2>
+    <div class="assets">
+      <div class="asset">
+        <div class="art"><img src="img/logo_web.png" alt="Arcostate logo" width="1200" height="385"></div>
+        <div class="assetrow">
+          <p class="note">Logo, transparent PNG, 2708×871. White lettering, so place it on dark backgrounds.</p>
+          <a class="btn" href="img/logo_full.png" download="arcostate_logo.png">Download PNG</a>
+        </div>
+      </div>
+      <a class="asset link" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/c6343415ac11124f182f8de8f77ab776f5aaf22c/capsule_616x353.jpg" target="_blank" rel="noopener">
+        <div class="art"><img src="img/capsule.jpg" alt="Arcostate main capsule art" width="616" height="353"></div>
+        <p class="note">Main capsule, 616×353. Click to open the full image.</p>
+      </a>
+      <a class="asset link" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/f0f7628e3f8ee87896daf4976738bdf41c6632a4/header.jpg" target="_blank" rel="noopener">
+        <div class="art"><img src="img/header.jpg" alt="Arcostate Steam header art" width="460" height="215"></div>
+        <p class="note">Steam header, 460×215. Click to open the full image.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="win contact" aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <div class="row"><span class="note">Email</span><code id="email">arcostategame@gmail.com</code><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="note">Discord</span><code id="discord">https://discord.gg/eHM2pDJcMu</code><button class="copy" type="button" data-copy="discord">Copy</button></div>
+    <div class="row"><span class="note">Steam</span><code id="steam">https://store.steampowered.com/app/5034430/Arcostate/</code><button class="copy" type="button" data-copy="steam">Copy</button></div>
+    <div class="row"><span class="note">itch.io</span><code id="itch">https://rubychoco.itch.io/arcostate</code><button class="copy" type="button" data-copy="itch">Copy</button></div>
+  </section>
+
+  <footer>Arcostate © Rubychoco</footer>
+</div>
+
+<script>
+document.querySelectorAll(".copy").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var el = document.getElementById(b.dataset.copy), t = el.textContent;
+    var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; };
+    try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+
+</script>
+</body>
+</html>
