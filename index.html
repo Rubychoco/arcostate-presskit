@@ -28,19 +28,31 @@
 * { box-sizing: border-box; }
 img { max-width: 100%; height: auto; }
 body { margin: 0; background: var(--void); color: var(--text); font: 15px/1.65 var(--font-body); }
-.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 40px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 52px; }
 a { color: var(--glow); text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
 .hero { display: grid; gap: 22px; justify-items: center; text-align: center; padding-block: 12px 4px; }
 .hero img { width: min(640px, 100%); height: auto; }
 .tagline { max-width: 60ch; color: var(--text); font-size: 1.125rem; text-wrap: balance; margin: 0; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-.btn { font: 400 0.875rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
-  color: var(--glow); border: 1px solid var(--line); padding: 12px 18px; background: var(--panel); }
-.btn:hover { background: #0b1d2b; }
-.btn.primary { background: var(--line); color: var(--void); }
-.btn.primary:hover { background: var(--glow); }
-.win { border: 1px solid var(--line); outline: 1px solid var(--line-dim); outline-offset: -5px; background: var(--panel); padding: 28px clamp(18px, 4vw, 36px); min-width: 0; }
+.btn { font: 400 0.875rem/1 var(--font-mono); letter-spacing: 0.04em; text-decoration: none; color: var(--glow);
+  padding: 10px 16px; border: 6px solid transparent; border-image: url("img/ui/ui_ability_box.png") 3 fill / 6px stretch;
+  image-rendering: pixelated; display: inline-block; }
+.btn:hover, .btn:focus-visible { border-image-source: url("img/ui/ui_ability_box_active.png"); color: #fff; }
+.btn.primary { border-image-source: url("img/ui/ui_ability_box_active.png"); color: #fff; }
+
+/* Section windows: the game's ui_frame.png 9-sliced at its 4px margin, drawn at the game's 2x. */
+.win { position: relative; min-width: 0; padding: 32px clamp(20px, 4vw, 40px);
+  border: 8px solid transparent; border-image: url("img/ui/ui_frame.png") 4 fill / 8px stretch;
+  image-rendering: pixelated; }
+/* The crest straddles the top and bottom edges, centred like WindowPanel.CrestX, with the frame's
+   three line rows blacked out behind its full width so it grows out of the border. */
+.win::before, .win::after { content: ""; position: absolute; left: calc(50% - 44px); width: 90px; height: 24px;
+  pointer-events: none; image-rendering: pixelated; }
+.win::before { top: -20px;
+  background: url("img/ui/ui_crest.png") 0 0 / 90px 24px no-repeat, linear-gradient(#000, #000) 0 12px / 90px 6px no-repeat; }
+.win::after { bottom: -18px;
+  background: url("img/ui/ui_crest.png") 0 0 / 90px 24px no-repeat, linear-gradient(#000, #000) 0 8px / 90px 6px no-repeat; }
 h2 { font: 400 1.05rem/1.2 var(--font-display); color: var(--glow); letter-spacing: 0.04em; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
 h2::after { content: ""; flex: 1; height: 10px; min-width: 26px; image-rendering: pixelated;
   background:
@@ -88,7 +100,7 @@ ul.feat li::before { content: "›"; position: absolute; left: 4px; color: var(-
 .row a { overflow-wrap: anywhere; }
 .row .note { min-width: 5.5em; }
 footer { text-align: center; font: 0.8rem var(--font-mono); color: var(--muted); }
-@media (prefers-reduced-motion: no-preference) { .btn, .shot { transition: background-color .15s, border-color .15s; } }
+@media (prefers-reduced-motion: no-preference) { .shot { transition: border-color .15s; } }
 </style>
 </head>
 <body>
