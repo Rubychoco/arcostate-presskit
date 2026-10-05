@@ -68,7 +68,6 @@ ul.feat li::before { content: "›"; position: absolute; left: 4px; color: var(-
 .shot { position: relative; display: block; border: 1px solid var(--line-dim); line-height: 0; }
 .shot:hover { border-color: var(--line); }
 .shot img { width: 100%; height: auto; display: block; }
-.shot span { position: absolute; right: 6px; bottom: 6px; font: 500 0.68rem/1 var(--font-mono); background: rgba(0,0,0,0.75); color: var(--glow); padding: 4px 6px; letter-spacing: 0.05em; }
 .trailer { display: grid; max-width: 640px; }
 @media (max-width: 760px) { .trailer { grid-template-columns: 1fr; } }
 .trailer a.thumb { position: relative; display: block; border: 1px solid var(--line-dim); line-height: 0; }
@@ -87,11 +86,11 @@ ul.feat li::before { content: "›"; position: absolute; left: 4px; color: var(-
 .note { font: 0.85rem/1.5 var(--font-mono); color: var(--muted); margin: 0; }
 .contact { display: grid; gap: 10px; }
 .row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
-.row code { font: 0.95rem var(--font-mono); color: var(--text); overflow-wrap: anywhere; }
-.copy { font: 500 0.72rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--glow); background: transparent; border: 1px solid var(--line-dim); padding: 6px 9px; cursor: pointer; }
-.copy:hover { border-color: var(--line); }
+.row { margin: 0; }
+.row a { overflow-wrap: anywhere; }
+.row .note { min-width: 5.5em; }
 footer { text-align: center; font: 0.8rem var(--font-mono); color: var(--muted); }
-@media (prefers-reduced-motion: no-preference) { .btn, .shot, .copy { transition: background-color .15s, border-color .15s; } }
+@media (prefers-reduced-motion: no-preference) { .btn, .shot { transition: background-color .15s, border-color .15s; } }
 </style>
 </head>
 <body>
@@ -161,15 +160,15 @@ footer { text-align: center; font: 0.8rem var(--font-mono); color: var(--muted);
     <h2 id="shots">Screenshots</h2>
     <p class="note">Click a screenshot to open the full 1920×1080 image.</p>
     <div class="grid" style="margin-top:14px">
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/81c5724384009f27bf3292cfdc534532ac69944b/ss_81c5724384009f27bf3292cfdc534532ac69944b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s1.jpg" alt="Arcostate gameplay screenshot 1" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/f8dd8eea9274585b187ac8335772f6aa4a50fd07/ss_f8dd8eea9274585b187ac8335772f6aa4a50fd07.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s2.jpg" alt="Arcostate gameplay screenshot 2" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3/ss_3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s3.jpg" alt="Arcostate gameplay screenshot 3" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e8cb696915d5fdd1eb3303b019c42de1bb1be94b/ss_e8cb696915d5fdd1eb3303b019c42de1bb1be94b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s4.jpg" alt="Arcostate gameplay screenshot 4" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/7f9079f12bce04f30007ff291da7c067093335f3/ss_7f9079f12bce04f30007ff291da7c067093335f3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s5.jpg" alt="Arcostate gameplay screenshot 5" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/65701e26b870558afd3fffb755afcc26d7f68b09/ss_65701e26b870558afd3fffb755afcc26d7f68b09.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s6.jpg" alt="Arcostate gameplay screenshot 6" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/c4ec856197a6c282069420c84dff0b03b7c9a2b8/ss_c4ec856197a6c282069420c84dff0b03b7c9a2b8.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s7.jpg" alt="Arcostate gameplay screenshot 7" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9/ss_e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s8.jpg" alt="Arcostate gameplay screenshot 8" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
-      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/d4653c9bbb31776174eeb7ae2e1e688e3a437977/ss_d4653c9bbb31776174eeb7ae2e1e688e3a437977.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s9.jpg" alt="Arcostate gameplay screenshot 9" loading="lazy" width="1280" height="720"><span>1920×1080</span></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/81c5724384009f27bf3292cfdc534532ac69944b/ss_81c5724384009f27bf3292cfdc534532ac69944b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s1.jpg" alt="Arcostate gameplay screenshot 1" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/f8dd8eea9274585b187ac8335772f6aa4a50fd07/ss_f8dd8eea9274585b187ac8335772f6aa4a50fd07.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s2.jpg" alt="Arcostate gameplay screenshot 2" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3/ss_3beb6d5cc7e1018ae6be4f846b592ebba26bbfe3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s3.jpg" alt="Arcostate gameplay screenshot 3" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e8cb696915d5fdd1eb3303b019c42de1bb1be94b/ss_e8cb696915d5fdd1eb3303b019c42de1bb1be94b.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s4.jpg" alt="Arcostate gameplay screenshot 4" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/7f9079f12bce04f30007ff291da7c067093335f3/ss_7f9079f12bce04f30007ff291da7c067093335f3.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s5.jpg" alt="Arcostate gameplay screenshot 5" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/65701e26b870558afd3fffb755afcc26d7f68b09/ss_65701e26b870558afd3fffb755afcc26d7f68b09.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s6.jpg" alt="Arcostate gameplay screenshot 6" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/c4ec856197a6c282069420c84dff0b03b7c9a2b8/ss_c4ec856197a6c282069420c84dff0b03b7c9a2b8.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s7.jpg" alt="Arcostate gameplay screenshot 7" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9/ss_e3715b96f9dcdd75cd945e79ffab3d9ee2dcecd9.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s8.jpg" alt="Arcostate gameplay screenshot 8" loading="lazy" width="1280" height="720"></a>
+      <a class="shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034430/d4653c9bbb31776174eeb7ae2e1e688e3a437977/ss_d4653c9bbb31776174eeb7ae2e1e688e3a437977.1920x1080.jpg" target="_blank" rel="noopener"><img src="img/s9.jpg" alt="Arcostate gameplay screenshot 9" loading="lazy" width="1280" height="720"></a>
     </div>
   </section>
 
@@ -193,25 +192,13 @@ footer { text-align: center; font: 0.8rem var(--font-mono); color: var(--muted);
 
   <section class="win contact" aria-labelledby="contact">
     <h2 id="contact">Contact</h2>
-    <div class="row"><span class="note">Email</span><code id="email">arcostategame@gmail.com</code><button class="copy" type="button" data-copy="email">Copy</button></div>
-    <div class="row"><span class="note">Discord</span><code id="discord">https://discord.gg/eHM2pDJcMu</code><button class="copy" type="button" data-copy="discord">Copy</button></div>
-    <div class="row"><span class="note">Steam</span><code id="steam">https://store.steampowered.com/app/5034430/Arcostate/</code><button class="copy" type="button" data-copy="steam">Copy</button></div>
-    <div class="row"><span class="note">itch.io</span><code id="itch">https://rubychoco.itch.io/arcostate</code><button class="copy" type="button" data-copy="itch">Copy</button></div>
+    <p class="row"><span class="note">Email</span><a href="mailto:arcostategame@gmail.com">arcostategame@gmail.com</a></p>
+    <p class="row"><span class="note">Discord</span><a href="https://discord.gg/eHM2pDJcMu" target="_blank" rel="noopener">discord.gg/eHM2pDJcMu</a></p>
+    <p class="row"><span class="note">Steam</span><a href="https://store.steampowered.com/app/5034430/Arcostate/" target="_blank" rel="noopener">store.steampowered.com/app/5034430/Arcostate</a></p>
+    <p class="row"><span class="note">itch.io</span><a href="https://rubychoco.itch.io/arcostate" target="_blank" rel="noopener">rubychoco.itch.io/arcostate</a></p>
   </section>
 
   <footer>Arcostate © Rubychoco</footer>
 </div>
-
-<script>
-document.querySelectorAll(".copy").forEach(function (b) {
-  b.addEventListener("click", function () {
-    var el = document.getElementById(b.dataset.copy), t = el.textContent;
-    var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); };
-    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; };
-    try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); }
-  });
-});
-
-</script>
 </body>
 </html>
